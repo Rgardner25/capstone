@@ -1,0 +1,25 @@
+<div id="side" class="col-md-2">
+  <h2><%= @trip.title %></h2>
+  <div class="btn-group">
+    <%= link_to content_tag(:button, 'Back to Trips', class: "btn btn-primary"), trips_path, remote: true %>
+      <br>
+      <hr>
+      <h3 class="h3-location">Add location</h3>
+      ￼<%= form_tag("/", method: "get", class: 'input-group', id: 'location-create')  do %>
+        <%= text_field_tag('location', nil, placeholder: "City, State", class: 'form-control') %>
+        <span class='input-group-btn'><%= submit_tag("+", class: 'btn btn-warning') %></span>
+      <% end %>
+      <h4 style="float:right; margin-top: 1.5em">Add Post</h4>
+  </div>
+  <div id='sidebar-new-trip'></div>
+  <div id='trip-show-container'>
+    <%= render partial: "loc_posts", locals: {locationpins: @location_pins} %>
+  </div>
+  <div class="clearfix">&nbsp;</div>
+</div>
+
+<div id="map" class="col-md-10" data-trip-id="<%= @trip.id %>">
+   <div id="map-canvas"></div>
+</div>
+
+<script>Map.loadTripPins(<%= @trip.id %>)</script>

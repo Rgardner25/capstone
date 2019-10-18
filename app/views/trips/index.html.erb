@@ -1,0 +1,24 @@
+<div id="side" class="col-md-2">
+  <h1>Trips</h1>
+  <hr>
+  <div class="btn-group">
+    <h4 style="float:left;">Add Trip</h4>
+    <br>
+      ￼<%= form_tag("/", method: "get", class: 'input-group', id: 'trip-create')  do %>
+        <%= text_field_tag('location', nil, placeholder: "Trip Title", class: 'form-control') %>
+        <span class='input-group-btn'><%= submit_tag("+", class: 'btn btn-warning') %></span>
+      <% end %>
+      <br>
+  </div>
+  <div id='sidebar-new-trip'></div>
+  <ul class='list-group'>
+    <% @trips.each do |trip| %>
+      <li class="list-group-item"><%= link_to trip.title, trip_path(trip), data: { :'trip-id' => trip.id} %></li>
+    <% end %>
+  </ul>
+  <div class="clearfix">&nbsp;</div>
+</div>
+
+<div id="map" class="col-md-10">
+   <div id="map-canvas"></div>
+</div>

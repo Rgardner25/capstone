@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
-gem 'i18n', '~> 0.6.9' #0.6.10 pulled back, will create errors
+gem 'i18n', '~> 0.8.0' #0.6.10 pulled back, will create errors
 gem 'rake'
 gem 'pg'
 gem 'bcrypt', '~> 3.1.7'

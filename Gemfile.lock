@@ -60,7 +60,7 @@ GEM
     ffi (1.9.3)
     geocoder (1.2.2)
     hike (1.2.3)
-    i18n (0.6.9)
+    i18n (0.8.0)
     jbuilder (2.1.0)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -180,7 +180,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   geocoder
-  i18n (~> 0.6.9)
+  i18n (~> 0.8.0)
   jbuilder (~> 2.0)
   jquery-rails (~> 3.1.0)
   jquery-ui-rails
